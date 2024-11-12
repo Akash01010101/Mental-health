@@ -1,23 +1,21 @@
-
-import './App.css'
-import Hero from './components/Hero'
-import Navbar from './components/Navbar'
-import Cont from './components/Cont'
-function App() {
-
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './Homepage';
+import './App.css';
+import Books from './Books';
+import Addiction from './Addiction';
+import MentalHealth from './MentalHealth';
+const App = () => {
   return (
-    <>
-    <main>
-    <Navbar/>
-     <Hero/>
-
-    </main>
-    <footer>
-    <Cont/>
-    </footer>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/Books" element={<Books />} />
+        <Route path="/MentalHealth" element={<MentalHealth />} />
+        <Route path="/Addiction" element={<Addiction />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -1,6 +1,12 @@
-import React from 'react'
-
+import { useGSAP } from '@gsap/react'
+import { useNavigate } from 'react-router-dom'
+import gsap from 'gsap';
 function Navbar() {
+  const nav = useNavigate()
+  useGSAP(()=>{
+    gsap.to('#nav',{opacity:1,delay:1})
+    gsap.to('#nav-bot',{opacity:1,delay:1})
+  },[])
   return (
     <>
     <div id='nav'>
@@ -8,12 +14,9 @@ function Navbar() {
         <button>Get started</button>
     </div>
     <div id="nav-bot">
-      <a href=""></a>
-      <button id="books">Books</button>
+      <button id="books" onClick={()=>{nav('/Books')}}>Books</button>
       <button id="mental-health">Mental health</button>
       <button>Addiction</button>
-      
-
     </div>
     </>
   )
