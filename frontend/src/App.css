@@ -10,8 +10,12 @@ body{
   margin: 0;
   height: 100vh;
 }
+body::-webkit-scrollbar{
+  display: none;
+}
 body > *{
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 #nav{
   height: 50px;
@@ -33,6 +37,27 @@ body > *{
   border: none;
   background-color: beige;
   border-radius: 75px;
+  transition: ease;
+  transition-duration: 500ms;
+}
+.books-but{
+    height: 50px;
+    width: 150px;
+    border: none;
+    background-color: beige;
+    border-radius: 75px;
+    transition: ease;
+    transition-duration: 500ms;
+    margin-top: 20px;
+}
+.books-but:hover{
+  background-color: rgb(241, 241, 165);
+  cursor:pointer;
+}
+#nav > button:hover{
+  background-color: rgb(241, 241, 165);
+  cursor:pointer;
+
 }
 #hero{
   height:auto ;
@@ -57,7 +82,7 @@ body > *{
 #h-img{
   margin-top: 30px;
   height:auto;
-  width: 100%;
+  width: 85%;
   border-radius: 75px;
   transition: 'opacity 1s ease-in-out';
   transition-duration: 1s;
@@ -101,10 +126,10 @@ body > *{
   justify-content: space-between;
   align-items: center;
   height:auto;
-  background-color: rgba(169, 103, 255, 0.671);
+  background-color: none;
 }
 .card{
-  background-color: rgba(175, 255, 100, 0.753);
+  background-color: rgba(193, 233, 190, 0.836);
   margin: 10px;
   display: flex;
   justify-content: flex-start;
@@ -125,7 +150,7 @@ body > *{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 20px;
   padding: 15px;
 }
@@ -141,19 +166,114 @@ body > *{
   height: 100vh;
   pointer-events: none;
   overflow: hidden;
-  z-index: -1; /* Set behind other content */
+  z-index: -1;
+}
+#books-head{
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+
 }
 
+.intro>h2,.what-is-mental-health>h3,.mental-health-challenges>h3,.signs>h3,.self-care>h3{
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  padding: 30px;
+}
+.intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro>p,.what-is-mental-health>p{
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 30px;
+  text-align: center;
+}
+.mental-health-challenges>ul,.signs>ul,.self-care>ul{
+  font-size: 20px;
+  padding: 50px;
+}
+#books-head>p{
+  font-size: 20px;
+  letter-spacing: 3px;
+  line-height: 30px;
+  margin-top: 20px;
+}
 .raindrop {
   position: absolute;
-  width: 1px; /* Thin raindrop */
-  background: rgba(0, 81, 255, 0.8); /* Light color for visibility */
-  filter: blur(1px); /* Slight blur for realism */
+  width: 1px;
+  background: rgba(0, 81, 255, 0.8);
+  filter: blur(1px);
   border-radius: 50%;
   animation: rainFall linear infinite;
 }
-
+.sec{
+  padding-top: 30px;
+}
+.b-change,.no-change{
+  width: 100vw;
+}
+.sec-bot{
+  padding: 40px;
+  background-color: rgba(255, 228, 196, 0.644);
+}
+.b-change{
+  background-color: rgba(243, 113, 255, 0.582);
+  width: 100%;
+}
+#books-div{
+  height: auto;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(200, 106, 219, 0.651);
+}
+.book-item{
+  margin-top: 34px;
+}
+.book-item>p{
+  font-size: 25px;
+  letter-spacing: 2px;
+  color: rgb(69, 1, 75);
+  text-align: center;
+}
+.book-item>h3{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.seeking-help>p,.seeking-help>ul,.resources>p,.encouragement>p{
+  font-size: 20px;
+  margin-top: 10px;
+}
+.seeking-help>h3,.resources>h3,.encouragement>h3{
+  font-size: 30px;
+  text-align: center;
+  padding-top: 40px;
+}
 @media (min-width:768px) {
+ .b-change,.no-change{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+ }
+ .b-change{
+  background-color: rgba(243, 113, 255, 0.904);
+ }
+ .sec-bot{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
   #hero{
     height: auto;
     overflow:hidden;
@@ -187,15 +307,16 @@ body > *{
     background-color: rgba(175, 255, 100, 0.753);
     margin: 10px;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 3px;
     margin-top: 100px;
     border-radius: 10px;
     transition: ease;
     transition-duration: 400ms;
-    height: 250px;
+    height: 300px;
+    overflow-y: hidden;
     z-index: 0;
   }
   .card>*{
@@ -208,5 +329,9 @@ body > *{
   #cards>*:hover{
     background-color: white;
     cursor: pointer;
+    overflow-y: scroll;
+  }
+  .card::-webkit-scrollbar{
+    display: none;
   }
 }

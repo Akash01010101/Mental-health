@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './Homepage';
+import HomePage from './pages/Homepage';
 import './App.css';
-import Books from './Books';
-import Addiction from './Addiction';
-import MentalHealth from './MentalHealth';
+import Books from './pages/Books';
+import Addiction from './pages/Addiction';
+import MentalHealth from './pages/MentalHealth';
 const App = () => {
   return (
     <Router>
