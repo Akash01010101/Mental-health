@@ -1,3 +1,5 @@
+
+
 *{
   margin: 0;
   font-family:Arial, Helvetica, sans-serif;
@@ -8,14 +10,20 @@ body{
   background-size: cover;
   background-position: center;
   margin: 0;
+  overflow-x: hidden;
   height: 100vh;
 }
 body::-webkit-scrollbar{
-  display: none;
+  background-color: rgb(224, 157, 193);
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: rgb(0, 0, 0);
 }
 body > *{
   overflow-x: hidden;
   overflow-y: hidden;
+  user-select: none;
 }
 #nav{
   height: 50px;
@@ -31,7 +39,7 @@ body > *{
   letter-spacing: 2px;
   margin-left: 20px;
 }
-#nav > button{
+#nav >a> button{
   height: 50px;
   width: 150px;
   border: none;
@@ -54,12 +62,13 @@ body > *{
   background-color: rgb(241, 241, 165);
   cursor:pointer;
 }
-#nav > button:hover{
+#nav >a> button:hover{
   background-color: rgb(241, 241, 165);
   cursor:pointer;
 
 }
 #hero{
+  pointer-events: none;
   height:auto ;
   width: calc(100vw - 50px);
   background-color: rgba(255, 255, 255, 0.123);
@@ -97,6 +106,10 @@ body > *{
   border: none;
   background: none;
   height: 50px;
+  transition: ease;
+  transition-delay: 50ms;
+  transition-duration: 200ms;
+  
 }
 #nav-bot>button:hover{
   color:white;
@@ -208,9 +221,9 @@ body > *{
 }
 .raindrop {
   position: absolute;
-  width: 1px;
+  width: 1.5px;
   background: rgba(0, 81, 255, 0.8);
-  filter: blur(1px);
+  filter: blur(0.5px);
   border-radius: 50%;
   animation: rainFall linear infinite;
 }
@@ -297,8 +310,9 @@ body > *{
   }
   #cards{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: repeat(auto-fill,minmax(30%,1fr));
   justify-content: center;
+  align-items: center;
   text-align: center;
   background-color: rgba(169, 103, 255, 0.671);
   padding-bottom: 200px;

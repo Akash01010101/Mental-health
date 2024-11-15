@@ -4,14 +4,14 @@ import gsap from 'gsap';
 function Navbar() {
   const nav = useNavigate()
   useGSAP(()=>{
-    gsap.to('#nav',{opacity:1,delay:0.5})
-    gsap.to('#nav-bot',{opacity:1,delay:0.5})
+    gsap.to('#nav',{opacity:1,delay:0.3})
+    gsap.to('#nav-bot',{opacity:1,delay:0.3})
   },[])
   return (
     <>
     <div id='nav'>
         <h1>UpLift.org</h1>
-        <button id='get-started'>Get started</button>
+        <a href="#cards"><button id='get-started'>Get started</button></a>
     </div>
     <div id="nav-bot">
       <button onClick={()=>{nav('/Books')}}>Books</button>

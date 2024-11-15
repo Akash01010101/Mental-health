@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
 function Books() {
   useGSAP(()=>{
-    gsap.fromTo('#books-head',{opacity:0,y:-100},{opacity:1,y:0,ease:'power1'})
-    gsap.fromTo('#books-div',{opacity:0,y:100},{opacity:1,y:0})
+    gsap.fromTo('#books-head',{opacity:0,y:-100},{opacity:1,y:0,ease:'power3.out'})
+    gsap.fromTo('#books-div',{opacity:0,y:100},{opacity:1,y:0,ease:'power4.out'})
   },[])
   const nav = useNavigate();
   let books = [

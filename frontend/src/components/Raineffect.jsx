@@ -5,7 +5,7 @@ const Raineffect = () => {
   const rainRef = useRef(null);
 
   useEffect(() => {
-    const numDrops = 150;
+    const numDrops = 100;
     const rainContainer = rainRef.current;
 
     for (let i = 0; i < numDrops; i++) {
@@ -16,7 +16,7 @@ const Raineffect = () => {
       drop.style.left = `${Math.random() * 100}vw`;
       drop.style.height = `${10 + Math.random() * 30}px`;
       drop.style.animationDelay = `${Math.random() * 2}s`;
-      drop.style.opacity = `${0.3 + Math.random() * 0.5}`;
+      drop.style.opacity = `${0.3 + Math.random() * 0.7}`;
       
       rainContainer.appendChild(drop);
     }
