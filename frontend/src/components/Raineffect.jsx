@@ -7,7 +7,6 @@ const Raineffect = () => {
     if (window.innerWidth>800){
       const numDrops = 100;
     const rainContainer = rainRef.current;
-    console.log(window.innerWidth)
     for (let i = 0; i < numDrops; i++) {
       const drop = document.createElement("div");
       drop.classList.add("raindrop");
@@ -21,7 +20,6 @@ const Raineffect = () => {
     }} else{
       const numDrops = 20;
       const rainContainer = rainRef.current;
-      console.log(window.innerWidth)
       for (let i = 0; i < numDrops; i++) {
         const drop = document.createElement("div");
         drop.classList.add("raindrop");

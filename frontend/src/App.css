@@ -154,7 +154,7 @@ body > *{
   transition: ease;
   transition-duration: 400ms;
   height: auto;
-  z-index: 0;
+  text-align: center;
 }
 .card>*{
   margin-bottom: 10px;
