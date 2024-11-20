@@ -27,7 +27,7 @@ function Books() {
     <div id='books-head'>
       <h1>Recommended Reads</h1>
       <p>Welcome to our mental health books collection! Here, we’ve curated a list of books to support, educate, and empower you on your mental health journey. Each recommendation has been chosen with care, covering a range of topics from mindfulness and resilience to understanding specific mental health challenges.</p>
-      <button className='books-but' onClick={()=>{nav('/')}}>Go back</button>
+      <button className='books-but' onClick={()=>{nav('/')}}>Home</button>
     </div>
       <div id="books-div">
         {books.map((book,index)=>(

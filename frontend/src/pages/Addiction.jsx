@@ -2,7 +2,9 @@ import React from 'react';
 import './Addiction.css'
 import gsap from'gsap'
 import { useGSAP } from '@gsap/react';
+import { useNavigate } from 'react-router-dom';
 const Addiction = () => {
+  const nav = useNavigate();
   useGSAP(()=>{
     gsap.fromTo('.sec',{opacity:0,y:-50},{opacity:1,y:0,ease:'power.in',duration:0.3,stagger:0.2})
     gsap.from('.an',{opacity:0,duration:0.5,stagger:0.5,ease:'power3.inOut'})
@@ -20,6 +22,7 @@ const Addiction = () => {
             to stop engaging in a particular behavior or substance despite harmful consequences. Addiction can affect anyone, and it’s not simply a matter of willpower or weakness. It often arises from a combination of genetic, environmental, and psychological factors. Recognizing addiction is the first step to seeking help and finding a path toward recovery.
           </p>
         </div>
+        <div className='but'><button className='books-but' onClick={()=>{nav('/')}}>Home</button></div>
       </div>
 
       <div className="section-types sec">

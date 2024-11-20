@@ -14,7 +14,7 @@ const MentalHealth = () => {
         <p>
           Mental health is a vital part of our overall well-being. Taking care of our mental health can help us navigate life's challenges with resilience and clarity. Whether you’re looking for information, support, or inspiration, we’re here to provide resources to help.
         </p>
-        <button className="books-but" onClick={()=>{nav('/')}}>Go back</button>
+        <button className="books-but" onClick={()=>{nav('/')}}>Home</button>
       </section>
      <div className="sec">
 <div className="nochange">

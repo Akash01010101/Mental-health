@@ -1,33 +1,47 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const Raineffect = () => {
   const rainRef = useRef(null);
-
   useEffect(() => {
-    const numDrops = 100;
+    if (window.innerWidth>800){
+      const numDrops = 100;
     const rainContainer = rainRef.current;
-
+    console.log(window.innerWidth)
     for (let i = 0; i < numDrops; i++) {
-      const drop = document.createElement('div');
-      drop.classList.add('raindrop');
-      
-      // Vary size, position, and delay for realism
+      const drop = document.createElement("div");
+      drop.classList.add("raindrop");
+
       drop.style.left = `${Math.random() * 100}vw`;
-      drop.style.height = `${10 + Math.random() * 30}px`;
-      drop.style.animationDelay = `${Math.random() * 2}s`;
-      drop.style.opacity = `${0.3 + Math.random() * 0.7}`;
-      
+      drop.style.height = `${10 + Math.random() * 35}px`;
+      drop.style.animationDelay = `${Math.random() * 1}s`;
+      drop.style.opacity = `${0.3 + Math.random() * 0.5}`;
+
       rainContainer.appendChild(drop);
+    }} else{
+      const numDrops = 20;
+      const rainContainer = rainRef.current;
+      console.log(window.innerWidth)
+      for (let i = 0; i < numDrops; i++) {
+        const drop = document.createElement("div");
+        drop.classList.add("raindrop");
+  
+        drop.style.left = `${Math.random() * 100}vw`;
+        drop.style.height = `${10 + Math.random() * 20}px`;
+        drop.style.animationDelay = `${Math.random() * 1}s`;
+        drop.style.opacity = `${0.3 + Math.random() * 0.5}`;
+  
+        rainContainer.appendChild(drop);
+    }
     }
 
     gsap.fromTo(
-      '.raindrop',
-      { y: -100 }, // Start above the viewport
+      ".raindrop",
+      { y: -100 },
       {
-        y: '100vh', // End at the bottom
-        duration: () => 1 + Math.random() * 1, // Random duration for each drop
-        ease: 'power2.in',
+        y: "100vh",
+        duration: () => 1 + Math.random() * 1,
+        ease: "power2.in",
         repeat: -1,
         stagger: 0.05,
       }

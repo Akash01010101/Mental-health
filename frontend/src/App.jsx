@@ -5,6 +5,7 @@ import './App.css';
 import Books from './pages/Books';
 import Addiction from './pages/Addiction';
 import MentalHealth from './pages/MentalHealth';
+import Meditations from './pages/Meditations';
 const App = () => {
   return (
     <Router>
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/Books" element={<Books />} />
         <Route path="/MentalHealth" element={<MentalHealth />} />
         <Route path="/Addiction" element={<Addiction />} />
+        <Route path="/meditations" element={<Meditations />} />
       </Routes>
     </Router>
   );

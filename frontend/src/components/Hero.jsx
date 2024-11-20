@@ -3,7 +3,7 @@ import {gsap} from 'gsap'
 import { useGSAP } from '@gsap/react'
 function Hero() {
   useGSAP(()=>{
-    gsap.fromTo('#hero',{opacity:0,x:-100},{opacity:1,x:0,delay:0.3,})
+    gsap.fromTo('#hero',{opacity:0,x:-100},{opacity:1,x:0,delay:0.2,duration:0.4})
   },[])
   return (
     <div id='hero'>

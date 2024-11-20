@@ -4,8 +4,8 @@ import gsap from 'gsap';
 function Navbar() {
   const nav = useNavigate()
   useGSAP(()=>{
-    gsap.to('#nav',{opacity:1,delay:0.3})
-    gsap.to('#nav-bot',{opacity:1,delay:0.3})
+    gsap.to('#nav',{opacity:1,delay:0.2})
+    gsap.to('#nav-bot',{opacity:1,delay:0.2})
   },[])
   return (
     <>
