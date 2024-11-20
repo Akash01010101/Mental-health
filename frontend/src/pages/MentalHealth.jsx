@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const MentalHealth = () => {
   const nav = useNavigate()
   useGSAP(()=>{
-    gsap.fromTo('.mental-health-page',{opacity:0,x:-50},{opacity:1,x:0,duration:1.5,ease:'power3.out'})
+    gsap.fromTo('.mental-health-page',{opacity:0,x:-50},{opacity:1,x:0,duration:1,ease:'power3.out'})
   },[])
   return (
     <div className="mental-health-page">

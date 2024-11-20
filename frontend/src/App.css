@@ -159,6 +159,16 @@ body > *{
 .card>*{
   margin-bottom: 10px;
 }
+#ai-fix{
+  font-size: 20px;
+  position: fixed;
+  right: 00px;
+  bottom: 85px;
+  background-color: aqua;
+  padding: 5px;
+  border-radius: 5px;  
+  
+}
 #cards>div{
   display: flex;
   flex-direction: column;

@@ -6,16 +6,20 @@ import Books from './pages/Books';
 import Addiction from './pages/Addiction';
 import MentalHealth from './pages/MentalHealth';
 import Meditations from './pages/Meditations';
+import Ai from './components/Ai';
+import Support from './pages/Support'
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Books" element={<Books />} />
-        <Route path="/MentalHealth" element={<MentalHealth />} />
+        <Route path="/MentalHealth" element={<MentalHealth/>} />
         <Route path="/Addiction" element={<Addiction />} />
         <Route path="/meditations" element={<Meditations />} />
+        <Route path='/Support' element={<Support/>}/>
       </Routes>
+      <Ai/>
     </Router>
   );
 }
