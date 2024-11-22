@@ -17,7 +17,7 @@
     text-align: center;
     font-size: 30px;
 }
-.meditations-container{
+.med-c{
     padding: 0px 30px 30px;
 }
 .section-up,.section-types,.section-symp,.section-imp{
@@ -41,7 +41,7 @@
     margin-top: 30px;
 }
 @media (min-width:768px) {
-    .meditations-container{
+    .med-c{
         padding:0px 15vw 20vh;
     }
 }

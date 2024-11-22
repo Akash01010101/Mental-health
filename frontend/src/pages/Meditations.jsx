@@ -12,7 +12,8 @@ const Meditations = () => {
     return (  
         <div className="meditations-container">
             <Navbar/>  
-            <header className="meditations-header">  
+           <div className="med-c">
+           <header className="meditations-header">  
                 <h1>Mindfulness and Meditation</h1>  
                 <p>Find peace, clarity, and resilience through meditation.</p>  
                 <button className='books-but' onClick={()=>{nav('/')}}>Home</button>
@@ -68,6 +69,7 @@ const Meditations = () => {
                 <p>Remember, meditation is a personal journey. Embrace the process and allow it to unfold at your own pace.</p>  
             </footer>  
             </div>
+           </div>
            
         </div>  
     );  
