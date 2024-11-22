@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react';
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
+import Navbar from '../components/Navbar'
 function Books() {
   useGSAP(()=>{
     gsap.fromTo('#books-head',{opacity:0,y:-100},{opacity:1,y:0,ease:'power3.out'})
@@ -24,6 +25,7 @@ function Books() {
 ]
   return (
     <>
+    <Navbar/>
     <div id='books-head'>
       <h1>Recommended Reads</h1>
       <p>Welcome to our mental health books collection! Here, we’ve curated a list of books to support, educate, and empower you on your mental health journey. Each recommendation has been chosen with care, covering a range of topics from mindfulness and resilience to understanding specific mental health challenges.</p>

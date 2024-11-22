@@ -1,6 +1,7 @@
 import React from "react";
 import {useGSAP} from '@gsap/react'
 import gsap from'gsap'
+import Navbar from "../components/Navbar";
 import { useNavigate } from 'react-router-dom'
 const MentalHealth = () => {
   const nav = useNavigate()
@@ -9,6 +10,7 @@ const MentalHealth = () => {
   },[])
   return (
     <div className="mental-health-page">
+      <Navbar/>
       <section className="intro">
         <h2>Welcome to Our Mental Health Resources</h2>
         <p>

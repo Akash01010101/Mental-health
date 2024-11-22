@@ -11,7 +11,7 @@ function Navbar() {
     <>
     <div id='nav'>
         <h1>UpLift.org</h1>
-        <a href="#cards"><button id='get-started'>Get started</button></a>
+        <a href="/#cards"><button id='get-started'>Get started</button></a>
     </div>
     <div id="nav-bot">
       <button onClick={()=>{nav('/Books')}}>Books</button>

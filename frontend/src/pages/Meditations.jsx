@@ -2,6 +2,7 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
 import './Meditations.css'; 
 import {useNavigate} from 'react-router-dom'
+import Navbar from '../components/Navbar'
 const Meditations = () => {  
     useGSAP(()=>{
         gsap.fromTo('.meditations-header',{opacity:0,x:-100},{opacity:1,x:0,ease:'power1.in',duration:0.5})
@@ -9,7 +10,8 @@ const Meditations = () => {
     },[])
     const nav = useNavigate();
     return (  
-        <div className="meditations-container">  
+        <div className="meditations-container">
+            <Navbar/>  
             <header className="meditations-header">  
                 <h1>Mindfulness and Meditation</h1>  
                 <p>Find peace, clarity, and resilience through meditation.</p>  

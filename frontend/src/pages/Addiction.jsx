@@ -3,6 +3,8 @@ import './Addiction.css'
 import gsap from'gsap'
 import { useGSAP } from '@gsap/react';
 import { useNavigate } from 'react-router-dom';
+
+import Navbar from '../components/Navbar'
 const Addiction = () => {
   const nav = useNavigate();
   useGSAP(()=>{
@@ -12,6 +14,7 @@ const Addiction = () => {
   },[])
   return (
     <div className="addictions-page">
+      <Navbar/>
       <div className="section-up sec">
         <div className="title">
           <h1>Addictions: Understanding, Support, and Recovery</h1>
