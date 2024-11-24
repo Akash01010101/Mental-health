@@ -282,6 +282,67 @@ body > *{
   text-align: center;
   padding-top: 40px;
 }
+.chat-container {  
+  display: flex;  
+  flex-direction: column;  
+  margin: auto;  
+  height:calc(100vh - 100px);
+  overflow: scroll;
+  border: 1px solid #ccc;  
+  border-radius: 10px;  
+  overflow: hidden;  
+}  
+
+.chat-messages {  
+  display: flex;  
+  flex-direction: column;  
+  padding: 10px;  
+     
+}  
+
+.message {  
+  max-width: 70%;  
+  padding: 10px;  
+  border-radius: 10px;  
+  margin: 5px;  
+}  
+
+.user-message {  
+  background-color: #007bff;  
+  color: white;  
+  align-self: flex-end;  
+}  
+
+.bot-message {  
+  background-color: #e0e0e0;  
+  align-self: flex-start;  
+}  
+
+.cf{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+}
+
+
+.chat-form input {  
+  width: 50vw;  
+  padding: 10px;  
+  border: 1px solid #ccc;  
+  border-radius: 5px;  
+}  
+
+.chat-form button {  
+  padding: 10px 15px;  
+  margin-left: 5px;  
+  background-color: #007bff;  
+  color: white;  
+  border: none;  
+  border-radius: 5px;  
+  cursor: pointer;  
+}
 @media (min-width:768px) {
  .b-change,.no-change{
   display: flex;

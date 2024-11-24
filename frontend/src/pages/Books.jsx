@@ -3,6 +3,8 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
 import Navbar from '../components/Navbar'
+import Cards from '../components/Cards';
+import Hero from '../components/Hero';
 function Books() {
   useGSAP(()=>{
     gsap.fromTo('#books-head',{opacity:0,y:-100},{opacity:1,y:0,ease:'power3.out'})
@@ -38,6 +40,8 @@ function Books() {
           <p>{book.desc}</p>
         </div>
         ))}
+      
+
       </div>
     </>
   )

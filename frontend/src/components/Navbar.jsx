@@ -17,6 +17,7 @@ function Navbar() {
       <button onClick={()=>{nav('/Books')}}>Books</button>
       <button onClick={()=>{nav('/MentalHealth')}}>Mental health</button>
       <button onClick={()=>{nav('/Addiction')}}>Addiction</button>
+      <button onClick={()=>{nav('/chats')}}>Chats</button>
     </div>
     </>
   )

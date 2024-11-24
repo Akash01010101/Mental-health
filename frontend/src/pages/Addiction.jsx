@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import { useNavigate } from 'react-router-dom';
 
 import Navbar from '../components/Navbar'
+import Cards from '../components/Cards';
 const Addiction = () => {
   const nav = useNavigate();
   useGSAP(()=>{
@@ -121,6 +122,7 @@ const Addiction = () => {
           </p>
         </div>
       </div>
+      <Cards/>
     </div>
   );
 };

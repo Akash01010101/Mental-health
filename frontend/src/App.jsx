@@ -8,6 +8,7 @@ import MentalHealth from './pages/MentalHealth';
 import Meditations from './pages/Meditations';
 import Ai from './components/Ai';
 import Support from './pages/Support'
+import ChatsPage from './pages/ChatsPage';
 const App = () => {
   return (
     <Router>
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/Addiction" element={<Addiction />} />
         <Route path="/meditations" element={<Meditations />} />
         <Route path='/Support' element={<Support/>}/>
+        <Route path='/chats' element={<ChatsPage/>}/>
       </Routes>
       <Ai/>
     </Router>

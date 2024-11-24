@@ -3,6 +3,8 @@ import {useGSAP} from '@gsap/react'
 import gsap from'gsap'
 import Navbar from "../components/Navbar";
 import { useNavigate } from 'react-router-dom'
+import Cards from "../components/Cards";
+import Hero from "../components/Hero";
 const MentalHealth = () => {
   const nav = useNavigate()
   useGSAP(()=>{
@@ -84,6 +86,8 @@ const MentalHealth = () => {
         </p>
       </section>
       </div>
+      <Cards/>
+      <Hero/>
     </div>
   );
 };
