@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import Cont from '../components/Cont'
 import Cards from '../components/Cards'
 import Raineffect from '../components/Raineffect'
+import Footer from '../components/Footer'
 function Homepage() {
   return (
     <>
@@ -16,6 +17,7 @@ function Homepage() {
     <footer>
     <Cont/>
     <Cards/>
+    <Footer/>
     </footer>
     </>
   )

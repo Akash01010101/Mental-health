@@ -306,7 +306,17 @@ body > *{
   padding: 10px;  
      
 }  
+.imgs{
+  margin: 30px;
+  max-width: fit-content;
+}
+.image-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
+}
 .message {  
   max-width: 70%;  
   padding: 10px;  
@@ -350,7 +360,35 @@ body > *{
   border-radius: 5px;  
   cursor: pointer;  
 }
+#quick{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#quick>h3{
+  font-size: 35px;
+  margin: 20px;
+}
 @media (min-width:768px) {
+  #quick{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(169, 103, 255);
+  }
+  #quick>h3{
+    font-size: 35px;
+    margin: 20px;
+  }
+  .imgs{
+    margin: 30px;
+    max-width:none;
+  }
+  .image-container{
+    display: flex;
+    flex-direction: row;
+  
+  }
  .b-change,.no-change{
   display: flex;
   justify-content: center;
@@ -426,4 +464,58 @@ body > *{
   .card::-webkit-scrollbar{
     display: none;
   }
+}
+
+
+
+.footer {  
+  font-size: 25px;
+  padding: 30px;  
+  text-align: center;  
+}  
+.footer>*{
+  margin: 30px;
+}
+.footer-content {  
+  margin-bottom: 30px;  
+}  
+
+.footer-header {  
+  color: #000000; 
+  margin-bottom: 15px; 
+}  
+.footer-paragraph {  
+  color: #000000;  
+}  
+
+.footer-links {  
+  margin-bottom: 20px;  
+}  
+.footer-links a{  
+  margin-bottom: 20px;  
+}  
+
+.footer-list {  
+  list-style-type: none;  
+  padding: 0;  
+  color: #222;  
+}  
+
+.footer-link {  
+  text-decoration: none;  
+  color: #7A7D9A;  
+}  
+
+.footer-link:hover {  
+  text-decoration: underline; /* Optional: Add hover effect */  
+}  
+
+.footer-bottom {  
+  border-top: 1px solid #ccc;  
+  padding-top: 10px;  
+}  
+
+.footer-bottom-text {  
+  margin: 0;  
+  color: #222;  
 }

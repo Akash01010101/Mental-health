@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import './Meditations.css'; 
 import {useNavigate} from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer';
 const Meditations = () => {  
     useGSAP(()=>{
         gsap.fromTo('.meditations-header',{opacity:0,x:-100},{opacity:1,x:0,ease:'power1.in',duration:0.5})
@@ -70,7 +71,7 @@ const Meditations = () => {
             </footer>  
             </div>
            </div>
-           
+           <Footer/>
         </div>  
     );  
 };  

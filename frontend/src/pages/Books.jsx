@@ -5,6 +5,7 @@ import gsap from 'gsap'
 import Navbar from '../components/Navbar'
 import Cards from '../components/Cards';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer';
 function Books() {
   useGSAP(()=>{
     gsap.fromTo('#books-head',{opacity:0,y:-100},{opacity:1,y:0,ease:'power3.out'})
@@ -43,6 +44,7 @@ function Books() {
       
 
       </div>
+      <Footer/>
     </>
   )
 }
