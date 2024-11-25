@@ -1,25 +1,33 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { db } from './firebase'; // Import your Firebase configuration
-import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
-let user = localStorage.getItem('user')
-if(user == null){
-    user = Date.now()
-    localStorage.setItem('user',user)
+import { useState, useEffect, useRef } from "react";
+import { db } from "./firebase";
+import {
+  collection,
+  addDoc,
+  onSnapshot,
+  query,
+  orderBy,
+} from "firebase/firestore";
+let user = localStorage.getItem("user");
+if (user == null) {
+  user = Date.now();
+  localStorage.setItem("user", user);
 }
 const ChatsPage = () => {
   const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    const messagesRef = collection(db, 'messages'); // Replace 'messages' with your collection name
-    const q = query(messagesRef, orderBy('createdAt', 'asc')); // Order messages by timestamp
+    const messagesRef = collection(db, "messages");
+    const q = query(messagesRef, orderBy("createdAt", "asc"));
 
     const unsubscribe = onSnapshot(q, (snapshot) => {
-      setMessages(snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })));
+      setMessages(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+      );
     });
 
     return () => unsubscribe();
@@ -28,22 +36,22 @@ const ChatsPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (newMessage.trim() !== '') {
+    if (newMessage.trim() !== "") {
       try {
-        await addDoc(collection(db, 'messages'), {
+        await addDoc(collection(db, "messages"), {
           message: newMessage,
           createdAt: new Date(),
-          sender: user, 
+          sender: user,
         });
-        setNewMessage('');
+        setNewMessage("");
       } catch (error) {
-        console.error('Error adding message:', error);
+        console.error("Error adding message:", error);
       }
     }
   };
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -54,22 +62,27 @@ const ChatsPage = () => {
     <div className="chat-container">
       <div className="chat-messages">
         {messages.map((message) => (
-          <div key={message.id} className={`message ${message.sender == user ? 'user-message' : 'bot-message'}`}>
+          <div
+            key={message.id}
+            className={`message ${
+              message.sender == user ? "user-message" : "bot-message"
+            }`}
+          >
             <p>{message.message}</p>
           </div>
         ))}
         <div ref={messagesEndRef} />
       </div>
       <div className="cf">
-      <form onSubmit={handleSubmit} className="chat-form">
-        <input
-          type="text"
-          placeholder="Type your message..."
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-        />
-        <button type="submit">Send</button>
-      </form>
+        <form onSubmit={handleSubmit} className="chat-form">
+          <input
+            type="text"
+            placeholder="Type your message..."
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+          />
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
   );
