@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import { useNavigate } from 'react-router-dom'
 import Cards from "../components/Cards";
 import Hero from "../components/Hero";
+import Footer from "../components/Footer";
 const MentalHealth = () => {
   const nav = useNavigate()
   useGSAP(()=>{
@@ -87,7 +88,7 @@ const MentalHealth = () => {
       </section>
       </div>
       <Cards/>
-      <Hero/>
+     <Footer/>
     </div>
   );
 };
