@@ -13,8 +13,7 @@ const Images = () => {
     setLoading(true);  
     try {  
       const response = await axios.get(`https://api.unsplash.com/search/photos?page=${page}&query=hope&client_id=${UNSPLASH_ACCESS_KEY}`);  
-      setPhotos((prevPhotos) => [...prevPhotos, ...response.data.results]);  // Note the change here  
-      console.log(response);  
+      setPhotos((prevPhotos) => [...prevPhotos, ...response.data.results]);  // Note the change here   
     } catch (error) {  
       console.error('Error fetching images:', error);  
     } finally {  
