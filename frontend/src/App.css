@@ -7,8 +7,9 @@
 .username-c{
   font-style: italic;
   font-weight: 100;
+  font-size: 15px;
   color:rgb(0, 0, 0);
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 /* src/App.css or create styles in ImageGallery.css */  
 
