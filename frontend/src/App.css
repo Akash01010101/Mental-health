@@ -4,6 +4,22 @@
   margin: 0;
   font-family:Arial, Helvetica, sans-serif;
 }
+.username-c{
+  font-style: italic;
+  font-weight: 100;
+  color:rgb(0, 0, 0);
+  margin-bottom: 10px;
+}
+.chatsp{
+  display: flex;
+  justify-content: center;
+}
+.user-message {  
+  background-color: #5ea9ff;  
+  color: white;  
+  align-self: flex-end;  
+}  
+
 body{
   background-image: url('assets/background.png');
   background-repeat: repeat;
@@ -324,11 +340,7 @@ body > *{
   margin: 5px;  
 }  
 
-.user-message {  
-  background-color: #007bff;  
-  color: white;  
-  align-self: flex-end;  
-}  
+
 
 .bot-message {  
   background-color: #e0e0e0;  

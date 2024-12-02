@@ -1,78 +1,51 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { db } from './firebase'; // Import your Firebase configuration
-import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
-let user = localStorage.getItem('user')
-if(user == null){
-    user = Date.now()
-    localStorage.setItem('user',user)
-}
-const ChatsPage = () => {
-  const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
-  const messagesEndRef = useRef(null);
+import { auth } from './firebase';   
+import { useState, useEffect } from 'react';   
+import { GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence, onAuthStateChanged } from 'firebase/auth';  
+import Chat from '../components/Chat';  
 
-  useEffect(() => {
-    const messagesRef = collection(db, 'messages'); // Replace 'messages' with your collection name
-    const q = query(messagesRef, orderBy('createdAt', 'asc')); // Order messages by timestamp
+const provider = new GoogleAuthProvider();  
 
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      setMessages(snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })));
-    });
+const ChatsPage = () => {  
+    const [user, setUser] = useState(null);  
 
-    return () => unsubscribe();
-  }, []);
+    useEffect(() => {  
+        const setAuthPersistence = async () => {  
+            try {  
+                await setPersistence(auth, browserLocalPersistence);    
+            } catch (error) {  
+                console.error('Error setting persistence:', error);  
+            }  
+        };  
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+        setAuthPersistence();  
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {  
+            if (currentUser) {  
+                setUser(currentUser.displayName);  
+            } else {  
+                setUser(null);  
+            }  
+        });  
+        return () => unsubscribe();  
+    }, []);  
 
-    if (newMessage.trim() !== '') {
-      try {
-        await addDoc(collection(db, 'messages'), {
-          message: newMessage,
-          createdAt: new Date(),
-          sender: user, 
-        });
-        setNewMessage('');
-      } catch (error) {
-        console.error('Error adding message:', error);
-      }
-    }
-  };
+    const handleLogin = async () => {  
+        try {  
+            const result = await signInWithPopup(auth, provider);  
+            setUser(result.user.displayName);  
+        } catch (error) {  
+            console.error("Error signing in: ", error);  
+        }  
+    };  
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
-
-  return (
-    <div className="chat-container">
-      <div className="chat-messages">
-        {messages.map((message) => (
-          <div key={message.id} className={`message ${message.sender == user ? 'user-message' : 'bot-message'}`}>
-            <p>{message.message}</p>
-          </div>
-        ))}
-        <div ref={messagesEndRef} />
-      </div>
-      <div className="cf">
-      <form onSubmit={handleSubmit} className="chat-form">
-        <input
-          type="text"
-          placeholder="Type your message..."
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-        />
-        <button type="submit">Send</button>
-      </form>
-      </div>
-    </div>
-  );
-};
+    return (  
+        <div>  
+            {user ? <Chat user={user} /> :   
+                <div className='chatsp'>  
+                    <button className='books-but' onClick={handleLogin}>Continue with Google</button>  
+                </div>  
+            }  
+        </div>  
+    );  
+};  
 
 export default ChatsPage;
