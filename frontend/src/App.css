@@ -10,6 +10,26 @@
   color:rgb(0, 0, 0);
   margin-bottom: 10px;
 }
+/* src/App.css or create styles in ImageGallery.css */  
+
+.image-gallery {  
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}  
+
+.photo-container {  
+  display: flex;  
+ flex-direction: column; 
+ gap: 20px;
+ margin: 20px;
+}  
+
+.photo-container img {  
+  width: 100%;  
+  border-radius: 8px;  
+}
 .chatsp{
   display: flex;
   justify-content: center;
@@ -382,6 +402,12 @@ body > *{
   margin: 20px;
 }
 @media (min-width:768px) {
+  .photo-container {  
+   display: grid ;
+   grid-template-columns: 1fr 1fr;
+   gap: 30px;
+  }  
+  
   #quick{
     display: flex;
     align-items: center;

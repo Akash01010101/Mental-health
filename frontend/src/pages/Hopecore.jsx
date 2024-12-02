@@ -1,10 +1,11 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-export default function Support() {
+import Images from './Images'
+export default function Hopecore() {
   return (
    <>
    <Navbar/>
-   coming soon
+   <Images/>
    </>
   )
 }

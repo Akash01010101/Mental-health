@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { db } from '../pages/firebase'; // Import your Firebase configuration
 import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
-let user = localStorage.getItem('user')
 const Chats = (props) => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
