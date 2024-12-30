@@ -8,8 +8,8 @@ import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 function Books() {
   useGSAP(()=>{
-    gsap.fromTo('#books-head',{opacity:0,y:-100},{opacity:1,y:0,ease:'power3.out'})
-    gsap.fromTo('#books-div',{opacity:0,y:100},{opacity:1,y:0,ease:'power4.out'})
+    gsap.from('#books-head',{opacity:0,y:-100,ease:'power3.out',duration:0.5,delay:0.3})
+    gsap.from('#books-div',{opacity:0,y:100,ease:'power4.out',delay:0.3,duration:0.5})
   },[])
   const nav = useNavigate();
   let books = [

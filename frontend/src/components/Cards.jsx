@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import gsap from'gsap'
 function Cards() {
   useGSAP(()=>{
-    gsap.fromTo('#cards',{opacity:0,x:-50},{opacity:1,x:0})
+    gsap.from('#cards',{opacity:0,y:50,duration:0.4,delay:0.4})
   },[])
   const nav = useNavigate();
   return (

@@ -6,8 +6,8 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer';
 const Meditations = () => {  
     useGSAP(()=>{
-        gsap.fromTo('.meditations-header',{opacity:0,x:-100},{opacity:1,x:0,ease:'power1.in',duration:0.5})
-        gsap.fromTo('.an',{opacity:0,x:100},{opacity:1,x:0,ease:'power1.in',duration:0.5})
+        gsap.from('.meditations-header',{opacity:0,x:-100,ease:'power1.in',duration:0.5})
+        gsap.from('.an',{opacity:0,x:100,ease:'power1.in',duration:0.5})
     },[])
     const nav = useNavigate();
     return (  

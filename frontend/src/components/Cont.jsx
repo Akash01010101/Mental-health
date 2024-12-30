@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 function Cont() {
   useGSAP(()=>{
-    gsap.fromTo('#content',{opacity:0,y:50},{opacity:1,y:0,delay:0.6})
+    gsap.from('#content',{opacity:0,y:40,delay:0.6})
   },[])
   return (
     <div id='content'>

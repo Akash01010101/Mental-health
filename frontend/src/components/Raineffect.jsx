@@ -37,7 +37,7 @@ const Raineffect = () => {
       ".raindrop",
       { y: -100 },
       {
-        y: "100vh",
+        y: "150vh",
         duration: () => 1 + Math.random() * 1,
         ease: "power2.in",
         repeat: -1,
