@@ -10,9 +10,7 @@ import Footer from '../components/Footer';
 const Addiction = () => {
   const nav = useNavigate();
   useGSAP(()=>{
-    gsap.fromTo('.sec',{opacity:0,y:-50},{opacity:1,y:0,ease:'power.in',duration:0.3,stagger:0.2})
-    gsap.from('.an',{opacity:0,duration:0.5,stagger:0.5,ease:'power3.inOut'})
-
+    gsap.from('.sec',{opacity:0,y:-100,ease:'power.in',duration:0.5})
   },[])
   return (
     <div className="addictions-page">
@@ -50,7 +48,7 @@ const Addiction = () => {
         </div>
       </div>
 
-      <div className="section-symp an">
+      <div className="section-symp sec">
         <div className="subtitle-m">
           <h2>Symptoms of Addiction</h2>
         </div>
@@ -64,7 +62,7 @@ const Addiction = () => {
         </div>
       </div>
 
-      <div className="section-imp an">
+      <div className="section-imp an sec">
         <div className="subtitle-m">
           <h2>The Impact of Addiction</h2>
         </div>
@@ -76,7 +74,7 @@ const Addiction = () => {
         </div>
       </div>
 
-      <div className="section-help an">
+      <div className="section-help sec">
         <div className="subtitle-m">
           <h2>Seeking Help and Recovery</h2>
         </div>
@@ -113,7 +111,7 @@ const Addiction = () => {
         </div>
       </div>
 
-      <div className="section-res an">
+      <div className="section-res sec">
         <div className="subtitle-m">
           <h2>Resources and Support</h2>
         </div>

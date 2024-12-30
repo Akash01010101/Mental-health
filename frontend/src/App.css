@@ -124,6 +124,7 @@ body > *{
   padding: 20px;
   opacity: 0;
 }
+
 #hero > i{
   font-size: 15px;
   margin-top: 20px;
@@ -170,7 +171,7 @@ body > *{
 }
 #content > h4{
   margin: 20px;
-  font-size: 20px;
+  font-size: 15px;
 }
 #content > p{
   font-size: 22px;
@@ -259,13 +260,13 @@ body > *{
 }
 .intro>p,.what-is-mental-health>p{
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 30px;
   text-align: center;
 }
 .mental-health-challenges>ul,.signs>ul,.self-care>ul{
   font-size: 20px;
-  padding: 50px;
+  padding: 30px;
 }
 #books-head>p{
   font-size: 20px;
@@ -280,6 +281,10 @@ body > *{
   filter: blur(0.5px);
   border-radius: 50%;
   animation: rainFall linear infinite;
+}
+.section-help,.section-res{
+  background-color: rgba(0, 255, 255, 0.24);
+  padding: 30px;
 }
 .sec{
   padding-top: 30px;
@@ -419,6 +424,16 @@ body > *{
     font-size: 35px;
     margin: 20px;
   }
+
+  #books-head{
+    padding: 50px 200px 50px 200px;
+  }
+  #books-div{
+    padding: 50px 200px 50px 200px;
+  }
+  .book-item{
+    margin:50px 0px 50px 0px;
+  }
   .imgs{
     margin: 30px;
     max-width:none;
@@ -452,20 +467,21 @@ body > *{
   border-radius: 75px;
   }
   #content > p{
-    font-size: 35px;
+    font-size: 25px;
     letter-spacing: 4px;
     line-height: 45px;
   }
   #content > h4{
     margin-bottom: 20px;
-    font-size: 40px;
+    font-size: 30px;
   }
   #content{
-    padding: 100px;
+    padding: 50px 200px 50px 200px;
   }
   #cards{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(30%,1fr));
+    grid-template-columns: 35% 35%;
+    justify-content: center;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -484,7 +500,7 @@ body > *{
     border-radius: 10px;
     transition: ease;
     transition-duration: 400ms;
-    height: 300px;
+    height: 200px;
     overflow-y: hidden;
     z-index: 0;
   }
@@ -503,12 +519,33 @@ body > *{
   .card::-webkit-scrollbar{
     display: none;
   }
+  .intro{
+    padding: 50px 200px 50px 200px;
+  }
+  .sec{
+    padding: 0px 200px 0px 200px;
+    text-align: center;
+  }
+  .what-is-mental-health{
+    padding: 50px 200px 50px 200px;
+  }
+  .mental-health-challenges,.signs,.self-care,.seeking-help,.resources,.encouragement{
+    padding:20px 200px 20px 200px;
+    text-align: center;
+    text-decoration: none;
+  }
+ ul{
+  list-style: none;
+ }
+ .mental-health-challenges>*>*,.signs>*>*,.self-care>*>*,.resources>*>*,.encouragement>*>*,.seeking-help>*>*{
+  margin: 10px;
+ }
 }
 
 
 
 .footer {  
-  font-size: 25px;
+  font-size: 20px;
   padding: 30px;  
   text-align: center;  
 }  
