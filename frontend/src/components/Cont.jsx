@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 function Cont() {
   useGSAP(()=>{
-    gsap.from('#content',{opacity:0,y:40,delay:0.6})
+    gsap.from('#content',{opacity:0,y:60,delay:0.4,x:60})
   },[])
+
   return (
     <div id='content'>
         <h4 >Why You Should Seek Help</h4>

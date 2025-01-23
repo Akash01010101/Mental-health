@@ -1,10 +1,5 @@
-import { useGSAP } from '@gsap/react'
 import { useNavigate } from 'react-router-dom'
-import gsap from'gsap'
 function Cards() {
-  useGSAP(()=>{
-    gsap.from('#cards',{opacity:0,y:50,duration:0.4,delay:0.4})
-  },[])
   const nav = useNavigate();
   return (
     <div id="quick">
