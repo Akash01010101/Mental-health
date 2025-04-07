@@ -29,7 +29,14 @@ flex-direction: column;
 
 .photo-container img {  
   width: 100%;  
-  border-radius: 8px;  
+  border-radius: 8px;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+.photo-container img.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
 }
 .chatsp{
   display: flex;
@@ -41,14 +48,14 @@ flex-direction: column;
   align-self: flex-end;  
 }  
 
-body{
-  background-image: url('assets/background.png');
-  background-repeat: repeat;
-  background-size: cover;
-  background-position: center;
+body {
+  background: linear-gradient(135deg, #E6E9FF 0%, #D4E0FF 50%, #C2D7FF 100%);
   margin: 0;
   overflow-x: hidden;
-  height: 100vh;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c1810;
+  position: relative;
 }
 body::-webkit-scrollbar{
   background-color: rgb(224, 157, 193);
@@ -69,13 +76,20 @@ body > *{
   overflow-y: hidden;
   user-select: none;
 }
-#nav{
+#nav {
   height: 50px;
-  background-color:rgb(230, 230, 230) ;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 #nav > h1{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -111,7 +125,6 @@ body > *{
 
 }
 #hero{
-  pointer-events: none;
   height:auto ;
   width: calc(100vw - 50px);
   background-color: rgba(255, 255, 255, 0.123);
@@ -122,6 +135,8 @@ body > *{
   font-size: 30px;
   padding: 20px;
   opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
 }
 
 #hero > i{
@@ -134,12 +149,16 @@ body > *{
 }
 #h-img{
   margin-top: 30px;
-  height:auto;
+  height: auto;
   width: 85%;
   border-radius: 75px;
-  transition: 'opacity 1s ease-in-out';
-  transition-duration: 1s;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+  display: block;
 }
+
+
 #nav-bot{
   display: flex;
   width: 100%;
@@ -159,23 +178,40 @@ body > *{
   color:white;
   cursor: pointer;
 }
-#content{
+#content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(222, 238, 221, 0.836);
-  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 60px 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   overflow-x: hidden;
 }
-#content > h4{
-  margin: 20px;
-  font-size: 15px;
+#content > h4 {
+  margin: 0 0 30px 0;
+  font-size: 32px;
+  color: #2C3E50;
+  text-align: center;
+  font-weight: 600;
+  background: linear-gradient(45deg, #2C3E50, #3498DB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-#content > p{
-  font-size: 22px;
-  letter-spacing: 1px;
-  line-height: 30px;
+#content > p {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+  color: #34495E;
+  text-align: center;
+  max-width: 800px;
+  margin: 0;
 }
 #cards{
   display: flex;
@@ -183,7 +219,6 @@ body > *{
   justify-content: space-between;
   align-items: center;
   height:auto;
-  background-color: none;
 }
 .card{
   background-color: rgba(193, 233, 190, 0.836);
@@ -282,21 +317,35 @@ body > *{
   animation: rainFall linear infinite;
 }
 .section-help,.section-res{
-  background-color: rgba(0, 255, 255, 0.24);
+
   padding: 30px;
 }
 #h-img {  
   width: 100%;  
   height: auto;  
-  transition: opacity 0.3s ease-in-out;  
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.6, 1), transform 1s cubic-bezier(0.4, 0, 0.6, 1);  
+  transform: scale(1);
+}
+
+#h-img.fade-in {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#h-img.fade-in.visible {
+  opacity: 1;
+  transform: scale(1);
 }  
 
-.fade-in {  
-  opacity: 1;  
-}  
+.fade-in {
+  opacity: 0;
+  transition: 2s ease;
+}
 
-.fade-out {  
-  opacity: 0;  
+.fade-in.visible {
+  opacity: 1;
+  transition: opacity 1s ease, transform 0.6s ease;
 }
 .sec{
   padding-top: 30px;
@@ -312,14 +361,7 @@ body > *{
   background-color: rgba(243, 113, 255, 0.582);
   width: 100%;
 }
-#books-div{
-  height: auto;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(200, 106, 219, 0.651);
-}
+
 .book-item{
   margin-top: 34px;
 }
@@ -430,7 +472,7 @@ body > *{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(169, 103, 255);
+
   }
   #quick>h3{
     font-size: 35px;
@@ -497,21 +539,23 @@ body > *{
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgba(169, 103, 255, 0.671);
   padding-bottom: 200px;
   }
-  .card{
-    background-color: rgba(175, 255, 100, 0.753);
+  .card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 3px;
+    padding: 20px;
     margin-top: 100px;
-    border-radius: 10px;
-    transition: ease;
-    transition-duration: 400ms;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    transition: all 0.3s ease;
     height: 200px;
     overflow-y: hidden;
     z-index: 0;
@@ -523,8 +567,10 @@ body > *{
     letter-spacing: 2px;
     line-height: 20px;
   }
-  #cards>*:hover{
-    background-color: white;
+  #cards>*:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
     cursor: pointer;
     overflow-y: scroll;
   }
@@ -542,7 +588,7 @@ body > *{
     padding: 50px 200px 50px 200px;
   }
   .mental-health-challenges,.signs,.self-care,.seeking-help,.resources,.encouragement{
-    padding:20px 200px 20px 200px;
+    padding:20px 200px 200px;
     text-align: center;
     text-decoration: none;
   }

@@ -1,16 +1,60 @@
-import React from "react";
-import {useGSAP} from '@gsap/react'
-import gsap from'gsap'
+import React, { useEffect, useRef } from "react";
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from "../components/Navbar";
 import { useNavigate } from 'react-router-dom'
 import Cards from "../components/Cards";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
+import './MentalHealth.css';
+
+gsap.registerPlugin(ScrollTrigger);
 const MentalHealth = () => {
-  const nav = useNavigate()
-  useGSAP(()=>{
-    gsap.from('.mental-health-page',{opacity:0,x:-50,duration:1,ease:'power3.out'})
-  },[])
+  const nav = useNavigate();
+  const sectionsRef = useRef([]);
+
+  useGSAP(() => {
+    // Initial page animation
+    gsap.from('.mental-health-page', {
+      opacity: 0,
+      x: -50,
+      duration: 1,
+      ease: 'power3.out'
+    });
+
+    // Animate sections immediately
+    const sections = [
+      '.intro',
+      '.what-is-mental-health',
+      '.mental-health-challenges',
+      '.signs',
+      '.self-care',
+      '.seeking-help',
+      '.resources',
+      '.encouragement'
+    ];
+
+    sections.forEach((section, index) => {
+      gsap.from(section, {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        delay: index * 0.1,
+        ease: 'power3.out'
+      });
+    });
+
+    // Animate list items with stagger
+    gsap.from('li', {
+      x: -20,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      delay: 0.5,
+      ease: 'power2.out'
+    });
+  }, []);
   return (
     <div className="mental-health-page">
       <Navbar/>

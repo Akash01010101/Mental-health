@@ -1,0 +1,129 @@
+#hero {
+  height: auto;
+  width: calc(100vw - 50px);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+  padding: 40px 20px;
+  margin: 20px auto;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 40px;
+  gap: 20px;
+  pointer-events: auto;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  width: 280px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  color: #2c1810;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #4a3832;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .feature-cards {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+}
+
+#hero-text {
+  display: flex;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#hero-text p {
+  font-weight: 600;
+  background: linear-gradient(45deg, #2C3E50, #3498DB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#hero-text p {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #2c1810;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#hero i {
+  font-size: 1.2rem;
+  color: #4a3832;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+#h-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+#h-img:hover {
+  transform: scale(1.02);
+}
+
+
+
+
+@media (max-width: 768px) {
+  #hero-text p {
+    font-size: 2.5rem;
+  }
+  
+  #hero i {
+    font-size: 1rem;
+  }
+  
+  #hero {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
